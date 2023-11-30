@@ -25,7 +25,7 @@ class ActionUnitTest extends TestCase
         'roles' => 'admin',
         'permissions' => ['manage-roles', 'access-dashboard', 'list-users', 'search-users'],
     ];
-    
+
     public function setUp(): void
     {
         parent::setUp();
@@ -56,8 +56,8 @@ class ActionUnitTest extends TestCase
 
         //Perform ajax search: By ID
         $result = $this->actingAs($this->testUser)
-                       ->json('get', '/search', 
-                       ['search_bar' => $this->testUser->id, "_method" => "GET"], 
+                       ->json('get', '/search',
+                       ['search_bar' => $this->testUser->id, "_method" => "GET"],
                        ['X-Requested-With' => 'XMLHttpRequest']);
         //Assert response
         $result->assertStatus(200);
@@ -111,7 +111,7 @@ class ActionUnitTest extends TestCase
         //Assert response
         $result->assertStatus(200);
         $result->assertJson([
-            '0' => $nothing, 
+            '0' => $nothing,
         ]);
 
         //Perform non ajax search

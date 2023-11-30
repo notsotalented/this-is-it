@@ -8,6 +8,7 @@ use App\Containers\Payment\Models\PaymentAccount;
 use App\Containers\Payment\Traits\ChargeableTrait;
 use App\Containers\Product\Models\Product;
 use App\Ship\Parents\Models\UserModel;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Notifications\Notifiable;
 
 /**
@@ -21,6 +22,7 @@ class User extends UserModel implements ChargeableInterface
     use ChargeableTrait;
     use AuthorizationTrait;
     use Notifiable;
+    use CrudTrait;
 
     /**
      * The database table used by the model.

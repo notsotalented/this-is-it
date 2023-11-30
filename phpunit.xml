@@ -9,7 +9,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnDefect="false">
     <testsuites>
         <testsuite name="Containers Tests">
             <directory suffix="Test.php">./app/Containers</directory>
