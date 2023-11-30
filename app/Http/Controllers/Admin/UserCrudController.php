@@ -29,13 +29,13 @@ class UserCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
+        $this->collumn(['name', 'email', 'created_at', 'updated_at']);
         $this->crud->setFromDb();
     }
 
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(UserRequest::class);
-
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->setFromDb();
     }

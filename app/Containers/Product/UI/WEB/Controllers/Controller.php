@@ -12,6 +12,9 @@ use Apiato\Core\Foundation\Facades\Apiato;
 use App\Ship\Transporters\DataTransporter;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+
+use Backpack\CRUD\app\Http\Controllers\CrudController;
+
 use Image;
 
 /**
@@ -19,7 +22,7 @@ use Image;
  *
  * @package App\Containers\Product\UI\WEB\Controllers
  */
-class Controller extends WebController
+class Controller extends CrudController
 {
   public function getAllProducts(GetAllProductsRequest $request)
   {

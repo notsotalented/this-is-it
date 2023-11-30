@@ -33,6 +33,7 @@
     "ext-openssl": "*",
     "ext-pdo": "*",
     "ext-tokenizer": "*",
+    "apiato/container-installer": "^2.0",
     "backpack/backupmanager": "^3.0",
     "backpack/crud": "4.1.*",
     "backpack/filemanager": "^1.1",
@@ -131,6 +132,7 @@
     "process-timeout": 0,
     "allow-plugins": {
       "wikimedia/composer-merge-plugin": true,
+      "apiato/container-installer": true,
       "apiato/containers-installer": true
     }
   },

@@ -13,12 +13,14 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Support\Facades\DB;
 use App\Containers\ReleaseVueJS\UI\WEB\Requests\GetAllReleaseVueJsRequest;
 
+use Backpack\CRUD\app\Http\Controllers\CrudController;
+
 /**
  * Class Controller
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class Controller extends WebController
+class Controller extends CrudController
 {
 
   /**

@@ -35,6 +35,7 @@ class TagCrudController extends CrudController
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(TagRequest::class);
+        dump($this->crud);
 
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->setFromDb();
