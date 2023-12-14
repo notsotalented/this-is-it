@@ -6,6 +6,7 @@ use App\Ship\Exceptions\InternalErrorException;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Parents\Controllers\WebController;
 
+
 use Apiato\Core\Foundation\Facades\Apiato;
 use App\Containers\User\UI\WEB\Requests\RegisterUserRequestWEB;
 use App\Containers\User\UI\WEB\Requests\RegisterPowerUserRequestWEB;
@@ -22,6 +23,7 @@ use App\Containers\User\UI\WEB\Requests\UserProfilePictureRequest;
 use App\Containers\User\UI\WEB\Requests\UsersProfileAccessRequest;
 use App\Ship\Transporters\DataTransporter;
 use Auth;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Image;
@@ -32,7 +34,7 @@ use Spatie\Permission\Models\Role;
  *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class Controller extends WebController
+class Controller extends CrudController
 {
 
   /**

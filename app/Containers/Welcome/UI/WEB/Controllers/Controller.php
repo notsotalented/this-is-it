@@ -4,6 +4,7 @@ namespace App\Containers\Welcome\UI\WEB\Controllers;
 
 use Apiato\Core\Foundation\Facades\Apiato;
 use App\Containers\Authorization\Models\Permission;
+use App\Containers\ReleaseVueJS\Models\ReleaseVueJS;
 use App\Ship\Parents\Controllers\WebController;
 use App\Ship\Transporters\DataTransporter;
 use Illuminate\Database\Eloquent\Collection;
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\DB;
 use App\Containers\ReleaseVueJS\UI\WEB\Requests\GetAllReleaseVueJsRequest;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+
 
 /**
  * Class Controller
@@ -188,9 +191,18 @@ class Controller extends CrudController
 
   public function showTest(GetAllReleaseVueJsRequest $request)
   {
+    $this->crud->setModel(ReleaseVueJS::class);
+    $this->crud->setEntityNameStrings('releasevuejs', 'releasevuejss');
+
+
+
     $releases = Apiato::call('ReleaseVueJS@GetAllReleaseVueJsAction', [
       new DataTransporter($request->all())
     ]);
+
+    $releases = $this->crud->getEntries();
+
+
 
     return view('welcome::test-page', compact('releases'));
   }
