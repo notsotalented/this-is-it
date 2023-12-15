@@ -191,6 +191,18 @@ class Controller extends CrudController
 
   public function showTest(GetAllReleaseVueJsRequest $request)
   {
+
+    $results = DB::select(DB::raw("select version()"));
+    $mysql_version =  $results[0]->{'version()'};
+    $mariadb_version = '';
+
+    if (strpos($mysql_version, 'Maria') !== false) {
+      $mariadb_version = $mysql_version;
+      $mysql_version = '';
+    }
+
+    //dd($mysql_version, $mariadb_version);
+
     $this->crud->setModel(ReleaseVueJS::class);
     $this->crud->setEntityNameStrings('releasevuejs', 'releasevuejss');
 
@@ -200,7 +212,7 @@ class Controller extends CrudController
       new DataTransporter($request->all())
     ]);
 
-    $releases = $this->crud->getEntries();
+    //  $releases = $this->crud->getEntries();
 
 
 

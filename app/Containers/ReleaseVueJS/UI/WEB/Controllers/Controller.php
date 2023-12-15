@@ -59,6 +59,7 @@ class Controller extends CrudController
    */
   public function showDetailRelease(FindReleaseVueJSByIdRequest $request)
   {
+
     $release = App::make(FindReleaseVueJSByIdAction::class)->run(new DataTransporter($request));
 
     return view('releasevuejs::admin.admin-show-detail-page', compact('release'));

@@ -232,7 +232,7 @@
         //Blink animation, testing for some Js function
         var openEyes = document.getElementById('sub_title_h5').innerHTML;
         var closedEyes =
-            'Clients see releases <i class="far fa-window-minimize text-success"></i> <i class="far fa-window-minimize text-warning"></i>';
+            'CHI TIẾT CẬP NHẬT <i class="far fa-window-minimize text-success"></i> <i class="far fa-window-minimize text-warning"></i>';
         //made blink a named function to improve readability a bit
         var blink = function(isSecondBlink) {
             //got rid of the ternary expressions since we're always doing
@@ -414,7 +414,7 @@
                                         class="fa fa-genderless @if ($key % 2 == 0) {{ 'text-success' }} @else {{ 'text-danger' }} @endif"></i>
                                 </div>
                                 {{-- Date/Time difference label --}}
-                                <div class="timeline-label" >
+                                <div class="timeline-label">
                                     {{-- Hot new label: the latest one has text with fire, otherwise in the same day elements will have text label --}}
                                     @if (date('Y-m-d', strtotime($release->created_at)) == date('Y-m-d'))
                                         <span class="label label-xl label-inline label-light-danger">
@@ -467,7 +467,8 @@
                                     {{-- Time label: show created_at timestamp --}}
                                     <span id="display_date_{{ $key }}"
                                         class="label label-xl label-inline label-light-success {{ dateColorFading($release->created_at, 1) }}"
-                                        style="display: none; cursor: pointer" onclick="toggleDateDisplay({{ $key }})">
+                                        style="display: none; cursor: pointer"
+                                        onclick="toggleDateDisplay({{ $key }})">
                                         {{-- Display create date --}}
                                         <span
                                             class="svg-icon svg-icon-sm {{ dateColorFading($release->created_at, 2) }} mr-1"
