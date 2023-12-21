@@ -14,7 +14,7 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
  */
 class UserCrudController extends CrudController
 {
-  use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
+  //use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
   use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
   use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
   use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
@@ -30,14 +30,9 @@ class UserCrudController extends CrudController
   protected function setupListOperation()
   {
     // TODO: remove setFromDb() and manually define Columns, maybe Filters
-
     $this->crud->setFromDb();
 
-    $this->crud->addColumn([
-      'name' => 'created_at',
-      'type' => 'date',
-      'label' => 'Publish_date',
-    ]);
+    $this->crud->enableExportButtons();
   }
 
   protected function setupCreateOperation()

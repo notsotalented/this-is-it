@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TagRequest;
+use App\Http\Requests\User1Request;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class TagCrudController
+ * Class User1CrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class TagCrudController extends CrudController
+class User1CrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -21,23 +21,21 @@ class TagCrudController extends CrudController
 
     public function setup()
     {
-        $this->crud->setModel('App\Models\Tag');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/tag');
-        $this->crud->setEntityNameStrings('tag', 'tags');
+      dd('1');
+        $this->crud->setModel('App\Models\User');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/user1');
+        $this->crud->setEntityNameStrings('user1', 'user1s');
     }
 
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
         $this->crud->setFromDb();
-
-        $this->crud->enableExportButtons();
     }
 
     protected function setupCreateOperation()
     {
-        $this->crud->setValidation(TagRequest::class);
-        //dump($this->crud);
+        $this->crud->setValidation(User1Request::class);
 
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->setFromDb();

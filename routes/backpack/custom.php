@@ -19,4 +19,5 @@ Route::group([
     Route::crud('tag', 'TagCrudController');
     Route::crud('user', 'UserCrudController');
     Route::crud('releasevuejs', 'ReleasevuejsCrudController');
+    Route::crud('user1', 'User1CrudController');
 }); // this should be the absolute last line of this file
