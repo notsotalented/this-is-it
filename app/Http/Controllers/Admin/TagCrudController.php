@@ -24,14 +24,17 @@ class TagCrudController extends CrudController
         $this->crud->setModel('App\Models\Tag');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/tag');
         $this->crud->setEntityNameStrings('tag', 'tags');
+
     }
 
     protected function setupListOperation()
     {
+
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
         $this->crud->setFromDb();
 
         $this->crud->enableExportButtons();
+
     }
 
     protected function setupCreateOperation()
@@ -41,6 +44,9 @@ class TagCrudController extends CrudController
 
         // TODO: remove setFromDb() and manually define Fields
         $this->crud->setFromDb();
+
+
+        dump($this->crud);
     }
 
     protected function setupUpdateOperation()
