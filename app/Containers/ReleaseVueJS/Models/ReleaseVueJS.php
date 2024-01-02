@@ -13,7 +13,6 @@ class ReleaseVueJS extends Model
   protected $table = 'releasevuejs';
   protected $fillable = [
     'name',
-    'date_created',
     'title_description',
     'detail_description',
     'is_publish',
@@ -26,7 +25,6 @@ class ReleaseVueJS extends Model
 
   protected $casts = [
     'images' => 'array',
-
   ];
 
   protected $dates = [

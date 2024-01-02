@@ -351,9 +351,6 @@ body > .coin-wrapper {
 .relative-pos {
   position: relative !important;
 }
-.table-wrapper {
-
-}
 .table-responsive::-webkit-scrollbar {
   height: 8px;
   border-radius: 8px;
@@ -488,7 +485,7 @@ body > .coin-wrapper {
 .investor-form .node-item--wrap.selected,
 .investor-form .node-item--wrap:hover {
   border-color: #3699FF;
-  box-shadow: 2px 2px 0 #3699FF; 
+  box-shadow: 2px 2px 0 #3699FF;
 }
 .investor-form .nodes-list {
   display: none;

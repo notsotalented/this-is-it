@@ -7,15 +7,12 @@ use App\Containers\Product\UI\WEB\Requests\GetAllProductsRequest;
 use App\Containers\Product\UI\WEB\Requests\ProductAddPageAccessRequest;
 use App\Containers\Product\UI\WEB\Requests\ShowAllPersonalProductsRequest;
 use App\Containers\Product\UI\WEB\Requests\ShowSpecificProductRequest;
-use App\Ship\Parents\Controllers\WebController;
 use Apiato\Core\Foundation\Facades\Apiato;
 use App\Ship\Transporters\DataTransporter;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
-use Image;
 
 /**
  * Class Controller
